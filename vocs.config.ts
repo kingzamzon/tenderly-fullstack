@@ -1,3 +1,6 @@
+import rehypeStringify from "rehype-stringify";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
 import { defineConfig } from 'vocs'
 
 export default defineConfig({
@@ -18,6 +21,13 @@ export default defineConfig({
       link: "https://github.com/kingzamzon/tenderly-fullstack",
     },
   ],
+  markdown: {
+    remarkPlugins: [
+      remarkParse,
+      remarkRehype,
+      rehypeStringify,
+    ],
+  },
   sidebar: [
     {
       text: 'Overview',
