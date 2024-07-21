@@ -1,0 +1,78 @@
+---
+title: Alert
+description: Alert
+---
+
+# Alert
+
+Smart Contract and Wallet Monitoring 
+
+The world of blockchain technology and decentralized finance (DeFi) 
+is rapidly growing also hacking and rug-pulling have increased massively, 
+with people losing their fortune. The blockchain is open to anyone 
+to keep track of what is going on in their favourite dApp smart contract 
+or wallet; That’s where Tenderly Alert comes in — It makes you listen to 
+an on-chain event and receive notification via supported destination.
+
+## Prerequisite
+A Tenderly account.
+Add Dai stable coin (DAI) to smart contract on Tenderly Dashboard.
+
+## What is Tenderly Alert?
+Tenderly Alert is a monitoring tool for smart contracts and wallets that allow you to listen for on-chain events and receive notifications in different destinations such as email, Slack, webhooks, Sentry, PagerDuty etc.
+
+## What Type of On-chain Event Can I Listen to?
+As of the time of writing Tenderly Alert supports various on-chain events called alert trigger type such as:
+- Successful Transaction
+- Failed Transaction
+- Function Call
+- Event Emitted
+- Event Parameter
+- ERC20 Token Transfer
+- State Change etc.
+
+## What are the Destinations Supported?
+Tenderly Alert currently support notification by Email, Slack, Telegram, 
+Discord, and other monitoring solution such as Sentry and PagerDuty, 
+by default the Active Destinations is Primary Email which is email used 
+to register on Tenderly.
+
+## Let Monitor DAI Smart Contract
+DAI is a stablecoin on the Ethereum blockchain whose value is kept as close to one United States dollar. I have already added the DAI Smart contract address to my list of contracts. Let’s set up our first alert to monitor any Transfer done on DAI that is above 1000.
+
+1. click on Alerts by the left menu bar under Monitoring.
+
+2. In the Rules tab click on Setup an Alert button
+
+3. In Alert Type Select Event Parameter
+
+4. Under Target, select Address
+
+5. Under Parameters: Parameters are broken down into:
+
+|Parameter | Meaning |
+|---- | ----- |
+|Select the target smart contract| The target smart contract here is DAI|
+|Select Method| Methods are written in a smart contract in this example we will pick the Transfer method|
+|Select Argument| Each method comes with/without an argument, we will wad|
+|Select Comparison| There is various comparison benchmark you can use such as Equal to, Not Equal to, Greater than etc|
+|Comparison Value| This is the value you want to set as a benchmark.This is saying Notify me for every transfer of DAI greater than 1000|
+
+6. Destination: we will be using email, 
+which can be set by switching it on. click on save when done.
+
+7. Congratulations: once save you will be redirected to the newly created 
+alert with all the information about the alert, with options to Duplicate 
+the Alert, Edit or Remove.
+
+## The benefit of Using Tenderly Alert to Monitor Smart Contracts and Wallets
+
+- Identify and resolve smart contract issues
+- Detect Operation and security problems earlier
+- Detect anomalies and suspicious behaviour on account wallets.
+- Integrate Tenderly Action to prevent hacks when suspicious behaviour 
+is noticed.
+
+
+
+https://kingzamzon.medium.com/tenderly-alert-a-tool-for-smart-contract-and-wallet-monitoring-b36c989850f

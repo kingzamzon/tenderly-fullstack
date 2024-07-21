@@ -86,6 +86,18 @@ export default defineConfig({
       link: '/transaction',
     },
     {
+      text: 'Explorer',
+      link: '/explorer',
+    },
+    {
+      text: 'Alert',
+      link: '/alert',
+    },
+    {
+      text: 'Sandbox',
+      link: '/sandbox',
+    },
+    {
       text: 'Getting Started',
       link: '/getting-started',
     },

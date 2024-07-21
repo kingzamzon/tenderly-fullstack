@@ -1,0 +1,108 @@
+---
+title: Tenderly Explorer
+description: Tenderly Explorer
+---
+
+# Tenderly Explorer
+
+The rise of different blockchains has brought various explorers with it, 
+that provide detailed analytics about its blockchain network 
+and the task is left to use their explorer when using their chain. 
+But what if there is another way? Gladly Tenderly Explorer solves 
+the problem with a unified blockchain explorer that provides 
+blockchain data in human-readable form. 
+In this article, we will dive deep into Tenderly Explorer.
+
+## What is Tenderly Explorer?
+Tenderly Explorer is a block explorer that lets you view public data on transactions, 
+smart contracts, and addresses on various blockchains supported by Tenderly. 
+Transaction hash (transaction ID), tokens, smart contracts 
+and wallet addresses can be used to query all related activities 
+on Tenderly Explorer.
+A registered Tenderly account unlocks Tenderly Explorer to 
+a new level with other Tenderly features such as Alerts, Actions etc.
+
+## Features
+- History to track recent search
+- Support for all the blockchain tenderly support.
+- Simulate live pending transactions
+- Re-stimulate failed and successful transactions
+- Easily Integrate other Tenderly Features such as Debugger, 
+Gas Profiler, Alerting, and Actions.
+
+## How to query transactions and wallet addresses on Tenderly Explorer?
+One of the features of Tenderly Explorer is tracking transactions. 
+For example, imagine you sent 0.001 ether (ETH) from your 
+wallet to the following public address:
+
+```
+0xeb99efe01daf2e7ef7ac0eec04eabf63151fb9dc.
+```
+
+After making the transaction, your wallet display this Transaction ID (TXID):
+
+```
+0x088fa395fff12683e595c677063829edcf7214ebfd82821e9b5b840b9a72daba
+```
+
+Let’s say you want to check the number of confirmations the transaction has and see if it has been sent successfully.
+
+1. Head to Tenderly Explorer homepage
+
+2. Copy and paste the transaction ID (TXID) into the search field, 
+and immediately start searching for it, in this example the transaction ID 
+is based on Ethereum Mainnet, once the search is done click on the result.
+
+3. Now you can see all the details regarding your specific transaction: 
+Explore the transaction.
+
+let’s go through just the default display:
+
+|Word | Meaning |
+|----|----|
+|Transaction Hash |	The string of numbers and letters (TXID) associated with your particular transaction.|
+|Network |	The Network where the transaction was performed e.g Mainnet, Polygon, Rinkeby, Mumbia|
+|Status |	Whether your transaction has failed, is in progress, or was successful.|
+|Block |	The block number your transaction was included in.|
+|Index |	Integer of the transactions index position in the block|
+|Timestamp |	The timestamp of the block your transaction was added to.|
+|Nonce |	The number of transactions made by the sender prior to this one.|
+|Value |	The amount sent in the transaction.|
+|Gas Used |	The amount of Gas used in the transaction|
+|Gas Price |	The cost per unit of gas for the transaction.|
+|Gas Limit |	The maximum amount of work set estimating a validator will do on a particular transaction|
+|Transaction Fee |	The fee paid for making the transaction.|
+|Sender |	The wallet address that made the transaction.|
+|Receiver |	The receiving address or smart contract.|
+
+
+## How to look up smart contracts on Tenderly Explorer
+
+Let find out a token address, you can head to CoinMarketCap, CoinGecko, 
+or the project’s official website. 
+You can also check https://etherscan.io/tokens.
+
+Let’s take a look at the MaticToken ERC-20 token on Ethereum:
+
+```
+0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0
+```
+
+1. Copy and paste the smart contract address into the search field.
+
+2. You’ll now see details on the contract balance and other general information regarding the Matic Token contract.
+
+3. Underneath, In the Transactions panel 
+let explore a single transaction. 
+In this example we explore transaction ID: 0xf0e0c949b4483b36855f53822fc89a2a47782fc9135451e068ebd2dd6597efcd
+
+## Tenderly Explorer vs EtherScan
+While EtherScan is said to be the most sophisticated blockchain explorer 
+in Ethereum with a lot of features such as interacting with smart contracts
+ e.t.c.
+I believe Tenderly Explorer can be used with other blockchains explorer
+ due to the extensive features it supports.
+
+https://dashboard.tenderly.co/explorer
+
+https://medium.com/coinmonks/tenderly-explorer-the-unified-blockchain-explorer-you-need-b3686bf1b56c
