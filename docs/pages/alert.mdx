@@ -15,14 +15,18 @@ or wallet; That’s where Tenderly Alert comes in — It makes you listen to
 an on-chain event and receive notification via supported destination.
 
 ## Prerequisite
-A Tenderly account.
-Add Dai stable coin (DAI) to smart contract on Tenderly Dashboard.
+- A [Tenderly](https://dashboard.tenderly.co/register) account.
+- Add [Dai stable coin (DAI)](https://etherscan.io/token/0x6b175474e89094c44da98b954eedeac495271d0f) to smart contract on Tenderly Dashboard.
 
 ## What is Tenderly Alert?
-Tenderly Alert is a monitoring tool for smart contracts and wallets that allow you to listen for on-chain events and receive notifications in different destinations such as email, Slack, webhooks, Sentry, PagerDuty etc.
+Tenderly Alert is a monitoring tool for smart contracts and wallets 
+that allow you to listen for on-chain events and receive notifications 
+in different destinations such as email, Slack, webhooks, Sentry, 
+PagerDuty etc.
 
 ## What Type of On-chain Event Can I Listen to?
-As of the time of writing Tenderly Alert supports various on-chain events called alert trigger type such as:
+As of the time of writing Tenderly Alert supports various on-chain events 
+called **alert trigger type** such as:
 - Successful Transaction
 - Failed Transaction
 - Function Call
@@ -31,39 +35,88 @@ As of the time of writing Tenderly Alert supports various on-chain events called
 - ERC20 Token Transfer
 - State Change etc.
 
+<figure>
+  <img src="/alert/1.webp" alt="Type of Alert Supported" />
+  <figcaption style={{ textAlign: "center" }}>Type of Alert Supported</figcaption>
+</figure>
+
 ## What are the Destinations Supported?
 Tenderly Alert currently support notification by Email, Slack, Telegram, 
 Discord, and other monitoring solution such as Sentry and PagerDuty, 
 by default the Active Destinations is Primary Email which is email used 
 to register on Tenderly.
 
+<figure>
+  <img src="/alert/2.webp" alt="Alert Destinations" />
+  <figcaption style={{ textAlign: "center" }}>Alert Destinations</figcaption>
+</figure>
+
 ## Let Monitor DAI Smart Contract
 DAI is a stablecoin on the Ethereum blockchain whose value is kept as close to one United States dollar. I have already added the DAI Smart contract address to my list of contracts. Let’s set up our first alert to monitor any Transfer done on DAI that is above 1000.
 
-1. click on Alerts by the left menu bar under Monitoring.
+**1. Click on Alerts by the left menu bar under Monitoring.**
 
-2. In the Rules tab click on Setup an Alert button
+<figure>
+  <img src="/alert/3.webp" alt="Alerts Menu" />
+  <figcaption style={{ textAlign: "center" }}>Alerts Menu</figcaption>
+</figure>
 
-3. In Alert Type Select Event Parameter
+**2. In the Rules tab click on Setup an Alert button**
 
-4. Under Target, select Address
+<figure>
+  <img src="/alert/4.webp" alt="Alerts Menu" />
+</figure>
 
-5. Under Parameters: Parameters are broken down into:
+**3. In Alert Type Select Event Parameter**
 
-|Parameter | Meaning |
-|---- | ----- |
-|Select the target smart contract| The target smart contract here is DAI|
-|Select Method| Methods are written in a smart contract in this example we will pick the Transfer method|
-|Select Argument| Each method comes with/without an argument, we will wad|
-|Select Comparison| There is various comparison benchmark you can use such as Equal to, Not Equal to, Greater than etc|
-|Comparison Value| This is the value you want to set as a benchmark.This is saying Notify me for every transfer of DAI greater than 1000|
+<figure>
+  <img src="/alert/5.webp" alt="Alerts Menu" />
+</figure>
 
-6. Destination: we will be using email, 
+**4. Under Target, select Address**
+
+<figure>
+  <img src="/alert/6.webp" alt="Alerts Menu" />
+</figure>
+
+**5. Under Parameters: Parameters are broken down into:**
+
+a. Select the target smart contract: The target smart contract here is DAI
+
+b. Select Method: Methods are written in a smart contract in this example we will pick the Transfer method
+
+c. Select Argument: Each method comes with/without an argument, we will **wad**.
+
+d. Select Comparison: There is various comparison benchmark you can use such as Equal to, Not Equal to, Greater than etc
+
+e. Comparison Value: This is the value you want to set as a benchmark.
+This is saying Notify me for every transfer of DAI greater than 1000
+
+<figure>
+  <img src="/alert/7.webp" alt="Notify me for every transfer of Dai greater than 1000" />
+  <figcaption style={{ textAlign: "center" }}>Notify me for every transfer of Dai greater than 1000</figcaption>
+</figure>
+
+**6. Destination:** we will be using email, 
 which can be set by switching it on. click on save when done.
 
-7. Congratulations: once save you will be redirected to the newly created 
+<figure>
+  <img src="/alert/8.webp" alt="" />
+</figure>
+
+**7. Congratulations:** once save you will be redirected to the newly created 
 alert with all the information about the alert, with options to Duplicate 
 the Alert, Edit or Remove.
+
+<figure>
+  <img src="/alert/9.webp" alt="New Created Alert" />
+  <figcaption style={{ textAlign: "center" }}>New Created Alert</figcaption>
+</figure>
+
+<figure>
+  <img src="/alert/10.webp" alt="Tenderly Email Alert Notification" />
+  <figcaption style={{ textAlign: "center" }}>Tenderly Email Alert Notification</figcaption>
+</figure>
 
 ## The benefit of Using Tenderly Alert to Monitor Smart Contracts and Wallets
 
@@ -72,7 +125,3 @@ the Alert, Edit or Remove.
 - Detect anomalies and suspicious behaviour on account wallets.
 - Integrate Tenderly Action to prevent hacks when suspicious behaviour 
 is noticed.
-
-
-
-https://kingzamzon.medium.com/tenderly-alert-a-tool-for-smart-contract-and-wallet-monitoring-b36c989850f
