@@ -5,10 +5,15 @@ description: Tenderly Sandbox
 
 # Tenderly Sandbox
 
-Tenderly Sandbox is a code editor created as a friendlier environment for 
+[Tenderly Sandbox](https://sandbox.tenderly.co/) is a code editor created as a friendlier environment for 
 Web3 developers. It is a fast prototyping environment where you can write, 
 execute, and debug smart contracts in the browser using Solidity and 
 JavaScript.
+
+<figure>
+  <img src="/sandbox/1.webp" alt="https://sandbox.tenderly.co/" />
+  <figcaption style={{ textAlign: "center" }}>https://sandbox.tenderly.co/</figcaption>
+</figure>
 
 The Tenderly Sandbox environment supports a side-by-side building of 
 smart contracts and scripts. It supports Solidity and JavaScript. 
@@ -29,39 +34,100 @@ Web3.js.
 Arbitrum, BNB Chain, Avalanche, Fantom, Gnosis Chain, etc.
 
 ## Tenderly Sandbox User Interface(UI)
+
+<figure>
+  <img src="/sandbox/2.webp" alt="Sandbox Panels" />
+  <figcaption style={{ textAlign: "center" }}>Sandbox Panels</figcaption>
+</figure>
+
 The Sandbox User Interface is made up of four panels:
 
-1. Solidity editor: write your Solidity smart contract code here.
-2. JavaScript editor: write your JavaScript code that deploys the smart 
+**1. Solidity editor:** write your Solidity smart contract code here.
+
+**2. JavaScript editor:** write your JavaScript code that deploys the smart 
 contracts and interacts with them.
-3. JavaScript console output: this is where you can view the outcome of the 
+
+**3. JavaScript console output:** this is where you can view the outcome of the 
 JavaScript execution, as well as any errors that occurred during the process.
-4. Simulate Transactions: a list of transactions that have occurred due 
+
+**4. Simulate Transactions:** a list of transactions that have occurred due 
 to your Solidity and JavaScript code, as well as a convenient method for 
 loading any transaction into the Debugger to examine the executing trace 
 and additional information.
 
 ## Your First Smart Contract Using Tenderly Sandbox
-Create an account on Tenderly to enjoy Sandbox full feature, if you don’t 
+[Create an account](https://dashboard.tenderly.co/register) on Tenderly to enjoy Sandbox full feature, if you don’t 
 have one. We will be creating a smart contract that allows us to store our 
-favourite number, called FavouriteNumber.
-1. Create New Sandbox: Visit https://sandbox.tenderly.co and click on the 
-drop down near the logo sandbox. Select New Sandbox and enter a unique name 
-for your sandbox and click Save.
+favourite number, called [FavouriteNumber](https://sandbox.tenderly.co/kingzamzon/test-samson-dev).
+**1. Create New Sandbox:** Visit https://sandbox.tenderly.co and click on the 
+drop down near the **logo sandbox**. Select **New Sandbox** and enter a unique name 
+for your sandbox and click **Save**.
 
-2. Replace contract.sol and script.js: When you create a new Sandbox, 
+<figure>
+  <img src="/sandbox/3.webp" alt="Sandbox Panels" />
+</figure>
+
+**2. Replace contract.sol and script.js:** When you create a new Sandbox, 
 the top two panels will be populated with a HelloWorld smart contract and 
 JavaScript code example.
 
-Replace the contract.sol
+Replace the **contract.sol**
 
-Replace script.js
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.14;
 
-3. Click Run to compile the smart contract and execute your JavaScript code. 
-Optionally configure your Sandbox by selecting the network, block, 
+contract FavouriteNumber {
+    uint public favouriteNumber;
+
+    constructor(uint _favouriteNumber) {
+        favouriteNumber = _favouriteNumber;
+    }
+
+    function getFavouriteNumber() public view returns (uint) {
+        return favouriteNumber;
+    }
+
+    function setFavouriteNumber(uint _favouriteNumber) public {
+        favouriteNumber = _favouriteNumber;
+    }
+}
+```
+
+Replace **script.js**
+
+```js
+// ethers is already injected
+
+console.log("Fetching Favourite Number contracts");
+const contract = $contracts["FavouriteNumber"];
+
+const provider = new ethers.providers.JsonRpcProvider($rpcUrl);
+const factory = new ethers.ContractFactory(contract.abi, contract.evm.bytecode, provider.getSigner());
+
+console.log("Deploying Favourite Number contracts")
+const favouriteNumber = await factory.deploy(7)
+
+let deployedFavNumber = await favouriteNumber.getFavouriteNumber();
+console.log("My deployed Favourite Number is: ",deployedFavNumber.toString());
+
+console.log("Calling setFavouriteNumber function");
+await favouriteNumber.setFavouriteNumber(16);
+
+let numFav = await favouriteNumber.getFavouriteNumber();
+console.log("My Current Favourite Number is: ", numFav.toString());
+```
+
+
+<figure>
+  <img src="/sandbox/4.webp" alt="Sandbox Panels" />
+</figure>
+
+3. Click **Run** to compile the smart contract and execute your JavaScript code. 
+Optionally [configure your Sandbox](https://docs.tenderly.co/tenderly-sandbox#customizing-your-sandbox-environment) by selecting the network, block, 
 compiler version, and setting compiler optimizations.
 
-The Simulate Transactions panel will list all the transactions that 
+The **Simulate Transactions panel** will list all the transactions that 
 resulted from your smart contract. Clicking on any transaction to load it 
 into the Tenderly Dashboard to inspect the execution trace or perform 
 other debugging tasks.
@@ -70,5 +136,14 @@ Tenderly Sandbox.
 
 ## Tenderly Sandbox vs Competitors
 
-
-https://medium.com/coinmonks/tenderly-sandbox-the-web3-ide-you-need-87d0f3086bb7
+|Feature |Tenderly Sandbox |Remix |EthFiddle|
+|---| ---- | ---- | ----- |
+|Test | No | Yes | No|
+|Browser Storage | Yes | Yes | Yes|
+|Mobile Friendly | Yes | No | No|
+|Easily Fork Mainnet | Yes | Yes | No|
+|Share Code/Fork | Yes | Yes | Yes|
+|Register to Share Code | Yes | No | No|
+|Local Deployment | Yes | Yes | Yes|
+|Mainnet Deployment | Yes | Yes | No|
+|Compilation Analytics | Yes | Yes | No|
