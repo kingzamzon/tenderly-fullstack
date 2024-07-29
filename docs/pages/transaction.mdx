@@ -12,4 +12,156 @@ We will be using Tenderly to keep track of what happen
 in a transaction presenting it in a human-readable form. 
 Let’s dive into Tenderly transactions: create a Tenderly account first.
 
-https://medium.com/coinmonks/take-your-smart-contract-development-to-the-next-level-with-tenderly-5fe58d2fa7d6
+1. **Add smart contract Address:** To enjoy tenderly the smart contract has to be verified, 
+you can verify your smart contract on tenderly or on [Etherscan](https://etherscan.io/). 
+Without verification Tenderly shows random numbers instead of a 
+human-readable form.
+Navigate to **Transactions** and click **Add Contracts**
+ button.
+
+<figure>
+  <img src="/transaction/1.webp" alt="Add Contract" />
+  <figcaption style={{ textAlign: "center" }}>Add Contract</figcaption>
+</figure>
+
+In this example, we will be using Dai stable coin (DAI). 
+DAI is a stablecoin by [MakerDAO](https://makerdao.com/en/) on the Ethereum blockchain which 
+is pegged with the United State dollar(USD). 
+Head over to [https://etherscan.io/tokens](https://etherscan.io/tokens) to find a token.
+
+<figure>
+  <img src="/transaction/2.webp" alt="Etherscan Tokens" />
+</figure>
+
+**Copy the contract address:** Locate the copy button close to the address.
+
+<figure>
+  <img src="/transaction/3.webp" alt="Etherscan Tokens" />
+</figure>
+
+**Paste contract address:** Navigate to Transactions where **Add contract modal** is opened. 
+Paste the copied contract address, select the network as mainnet. 
+When done click **Add Contract** button.
+
+<figure>
+  <img src="/transaction/4.webp" alt="Etherscan Tokens" />
+</figure>
+
+Automatically, 
+Transactions tab now shows all transaction confirm on Dai stablecoin.
+
+<figure>
+  <img src="/transaction/5.webp" alt="Etherscan Tokens" />
+</figure>
+
+**1. Filter Transaction:** This gives the ability to filter transactions on 
+the table based on success, failed, etc. 
+This does not come with a free account though.
+
+<figure>
+  <img src="/transaction/6.webp" alt="Etherscan Tokens" />
+</figure>
+
+**2. Configure Columns:** Allows the ability to add or remove 
+columns on the table, with a toggle switch.
+
+<figure>
+  <img src="/transaction/7.webp" alt="Etherscan Tokens" />
+</figure>
+
+
+Let’s analyse a single transaction, in this example, we will be using 
+a failed transaction, 
+kindly use the paginator at the bottom of the table to navigate.
+
+<figure>
+  <img src="/transaction/8.webp" alt="Etherscan Tokens" />
+</figure>
+
+### Analysing a single transaction
+
+Click on the Transaction Hash(Tx Hash) to select a single transaction.
+
+<figure>
+  <img src="/transaction/9.webp" alt="Etherscan Tokens" />
+</figure>
+
+**1. Overview:** It shows a summary of what went down in the transaction including.
+
+*Stack Trace:* This is the path the transaction took.
+
+*Stack Trace Overview:* Everything that happens in the transaction till it gets to its failed state. You can search through the trace, and jump between; revert by clicking show revert. Functions can easily be annotated which
+can help when debugging a problem and collaborating in a team.
+
+<figure>
+  <img src="/transaction/10.webp" alt="Etherscan Tokens" />
+</figure>
+
+**2. Contracts:** This shows all the contracts that are involved in the 
+transaction. In this particular transaction UniswapV3Pool, OlympusERC20Token,
+ Dai, Vault etc. contracts were involved.
+
+<figure>
+  <img src="/transaction/11.webp" alt="Etherscan Tokens" />
+</figure>
+
+**3. Events:** For a failed transaction there is no event, 
+checking a successful transaction from the dashboard brings a beautiful 
+view of all the events that were called by different smart contracts. 
+Events in a single transaction can be filtered by contracts or event names.
+
+<figure>
+  <img src="/transaction/12.webp" alt="Etherscan Tokens" />
+</figure>
+
+**4. State Changes:** This shows all the state changes of all the contracts 
+that participated in the execution of this transaction in human-readable 
+form.
+
+<figure>
+  <img src="/transaction/13.webp" alt="Etherscan Tokens" />
+</figure>
+
+**5. Debugger:** Debugger allows movement through the call trace of the 
+smart contracts involved in the transaction. Tenderly Debugger is a 
+Jump by jump debugger, which allows the view of all the functions that 
+were involved in the calls to external contracts or calls to function, 
+with comment support to discuss hacks and likes.
+Though not all contract sources are available for debugging.
+
+<figure>
+  <img src="/transaction/14.webp" alt="Etherscan Tokens" />
+</figure>
+
+**6. Gas Profiler:** This is like the flame graph in the CPU but for 
+transactions. It shows how much gas your transaction consumes; 
+including a deep analysis of the amount each function is consuming. 
+This can help you in your decision on optimizing gas usage and saving 
+the customer money.
+
+<figure>
+  <img src="/transaction/15.webp" alt="Etherscan Tokens" />
+</figure>
+
+**7. Re-Simulate:** This load up the transaction in the Simulator, 
+which gives you access to re-run the same transaction, 
+which you can use to debug what might have gone wrong.
+
+<figure>
+  <img src="/transaction/16.webp" alt="Etherscan Tokens" />
+</figure>
+
+**8. View on Explorer:** This opens up the transaction in Etherscan.
+View on Explorer
+
+<figure>
+  <img src="/transaction/17.webp" alt="Etherscan Tokens" />
+</figure>
+
+
+As you have seen above, Tenderly features are powerful for smart contract development; and each feature compliment the other,
+- It produces blockchain data in human-readable form.
+- It keeps track of the event life cycle of smart contracts.
+- It provides private smart contract verification.
+- It offers transaction simulation which has been used by Instadapp.
+
